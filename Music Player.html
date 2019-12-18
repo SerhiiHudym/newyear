@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="Main.css" rel="stylesheet"/>
+    <script src="jquery-1.10.2.min.js"></script>
+    <title>Happy New Year</title>
+</head>
+<body>
+    <div id="bg">
+        <div id="blackLayer"></div>
+        <img src="./media/images/posters/0.jpg"/>
+    </div>
+   
+    <div id="main">
+        <div id="image">
+            <img src="./media/images/posters/0.jpg"/>
+        </div>
+        <div id="player">
+            <div id="songTitle">Demo</div>
+            <div id="buttons">
+                <button id="pre" onclick="pre()"><img src="./media/images/controls/Pre.png" height="90%" width="90%"/></button>
+                <button id="play" onclick="playOrPauseSong()"><img src="./media/images/controls/Play.png"/></button>
+                <button id="next" onclick="next()"><img src="./media/images/controls/Next.png" height="90%" width="90%"/></button>
+            </div>
+            
+            <div id="seek-bar">
+                <div id="fill"></div>
+                <div id="handle"></div>
+            </div>
+        </div>
+    </div>
+</body>
+<script type="text/javascript">
+    
+    var songs = [
+        "ABBA – Happy New Year",
+        "All I Want For Christmas Is You",
+        "All I Want For Christmas",
+        "Ashanti - Christmas Time Again",
+        "Baby Please Come Home",
+        "Bing Crosby - I Wish You a Merry Christmas",
+        "Brenda Lee - Rockin  Around the Christmas Tree",
+        "Bryan Adams - Merry Christmas",
+        "Christmas Love",
+        "Ella Fitzgerald - Rudolph the Red Nosed",
+        "Frank Sinatra - Jingle Bells",
+        "Frank Sinatra – Have Yourself A Merry Little Christmas",
+        "Frank Sinatra – Strangers In The Night",
+        "Here",
+        "I'll Be Home",
+        "It's Beginning to Look a Lot Like Christmas",
+        "Jingle Bells",
+        "Jon Bon Jovi - Please Come home For Christmas",
+        "Keith Richards - Run Run Rudolph",
+        "Let It Snow! Let It Snow! Let It Snow!",
+        "Loneliest Time Of Year",
+        "Mariah Carey - All I Want for Christmas",
+        "Matt Terry - When Christmas Comes",
+        "Merry Christmas Everyone",
+        "Mery Christmas – Let It Snow",
+        "Michael Bolton - Jingle Bell Rock",
+        "Mistletoe And Holly",
+        "Nickie Conley - 100 Christmas Kisses",
+        "O Holy Night",
+        "OneRepublic - Christmas Without You",
+        "Perry Como - Magic Moments",
+        "Sarah Conor - Christmas In My heart",
+        "Thank God It's Christmas",
+        "The Pussycat Dolls - Santa Baby",
+        "Train - Shake up Christmas",
+        "Underneath The Tree",
+        "Wham - Last Christmas"
+    ];
+    var poster = ["Poster1.jpg","Poster2.jpg","Poster3.jpg"];
+    
+    var songTitle = document.getElementById("songTitle");
+    var fillBar = document.getElementById("fill");
+    
+    var song = new Audio();
+    var currentSong = 0;    // it point to the current song
+    
+    window.onload = playSong;   // it will call the function playSong when window is load
+    
+    function playSong(){
+        
+        song.src = './media/audio/' + songs[currentSong] + '.mp3';  //set the source of 0th song 
+        
+        songTitle.textContent = songs[currentSong]; // set the title of song
+        
+        song.play();    // play the song
+    }
+    
+    function playOrPauseSong(){
+        
+        if(song.paused){
+            song.play();
+            $("#play img").attr("src","./media/images/controls/Pause.png");
+        }
+        else{
+            song.pause();
+            $("#play img").attr("src","./media/images/controls/Play.png");
+        }
+    }
+    
+    song.addEventListener('timeupdate',function(){ 
+        
+        var position = song.currentTime / song.duration;
+        
+        fillBar.style.width = position * 100 +'%';
+    });
+    
+
+    function next(){
+        
+        currentSong++;
+        if(currentSong > songs.length-1){
+            currentSong = 0;
+        }
+        playSong();
+        $("#play img").attr("src","./media/images/controls/Pause.png");
+        // document.getElementById('bg')
+        $("#image img").attr("src",'./media/images/posters/' + currentSong.toString() + '.jpg'); //currentSong);
+        $("#bg img").attr("src", './media/images/posters/' + currentSong.toString() + '.jpg');
+    }
+
+    function pre(){
+        
+        currentSong--;
+        if(currentSong < 0){
+            currentSong = songs.length-1;
+        }
+        playSong();
+        $("#play img").attr("src","./media/images/controls/Pause.png");
+        $("#image img").attr("src",'./media/images/posters/' + currentSong.toString() + '.jpg');
+        $("#bg img").attr("src",'./media/images/posters/' + currentSong.toString() + '.jpg');//currentSong.toString() + 'jpg');
+    }
+</script>
+</html>
