@@ -56,10 +56,10 @@ body{
 #songTitle{
     width:300px;
     text-align: center;
-    font-family: monospace;
+    font-family: 'Poppins', sans-serif;
     font-size: 18px;
     position: absolute;
-    top:60%;
+    /* top:60%; */
     left: 50%;
     transform: translate(-50%,-50%);
 }
@@ -85,15 +85,27 @@ body{
     left: 50%;
     transform: translate(-50%,-50%);
 }
+
+#play:hover {
+    background-color: #e00606;
+}
+
 #next{
     width: 30px;
     height: 30px;
     left: 70%;
 }
+
+#next:hover {
+    background-color: #e00606;
+}
 #pre{
     width: 30px;
     height: 30px;
     left: 30%;
+}
+#pre:hover {
+    background-color: #e00606;
 }
 #play img,#next img,#pre img{
     position: absolute;
@@ -123,6 +135,30 @@ body{
     border-radius: 50%;
     margin-left: -5px;
     transform: scale(2);
+}
+#songsList {
+    overflow-y: scroll;
+    -ms-overflow-style: none;
+    height:200px;
+    display: block;
+}
+
+#songsList::-webkit-scrollbar {
+    display: none;
+}
+
+#songsList ol {
+    margin: 0;
+    /* padding: 0; */
+}
+
+#songsList ol li {
+    font-family: 'Poppins', sans-serif;
+}
+#songsList ol li:hover {
+    cursor: pointer;
+    font-weight: 500;
+    color: #F10301;
 }
 #container {
     z-index: 999;
@@ -186,9 +222,9 @@ body{
     height: 35px;
     background: #F10301;
     color: #fff;
-    font-size: 0.5em;
+    font-size: 0.6em;
     line-height: 35px;
-    font-weight: 300;
+    font-weight: 400;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
 }
@@ -205,7 +241,7 @@ body{
 #countdown #second:before {
     content: 'Seconds';
 }
-@media screen and (max-width: 1200px) {
+/* @media screen and (max-width: 1200px) {
     #main {
         width: 85%;
     }
@@ -215,161 +251,327 @@ body{
     #main {
         width: 25%;
     }
+} */
+@media screen and (max-device-width : 1400px) {
+    /* Styles */
+  
+    #songsList {
+        display: none;
+        /* height: 0; */
+        overflow-y: scroll;
+        /* height:200px; */
+    }
+    #main {
+        width: 55%;
+        /* height: 60%; */
+    }
+    /* #songsList ol {
+        display: none;
+        margin: 0;
+        padding: 0;
+    }; */
 }
 
-/* Smartphones (portrait and landscape) ----------- */
-@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+@media screen and (max-device-height : 768px) {
     /* Styles */
-        #main {
-            width: 85%;
-        }
+  
+    #songsList {
+        display: none;
+        /* height: 0; */
+        overflow: hidden; 
+        /* height:200px; */
     }
-    
-    @media only screen and (min-device-width : 320px) and (min-device-height : 1000px) {
-        /* Styles */
-            #main {
-                width: 85%;
-                height: 60%;
-            }
-        }
 
-    /* Smartphones (landscape) ----------- */
-    @media only screen and (min-width : 321px) {
-    /* Styles */
-    }
-    
-    /* Smartphones (portrait) ----------- */
-    @media only screen and (max-width : 320px) {
-    /* Styles */
     #main {
-        width: 85%;
-        height: 60%;
+        width: 27%;
+        /* height: 60%; */
     }
-    }
-    
-    /* iPads (portrait and landscape) ----------- */
-    @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
-    /* Styles */
-    #main {
-        width: 85%;
-    }
-    }
-    
-    /* iPads (landscape) ----------- */
-    @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) {
-    /* Styles */
-    }
-    
-    /* iPads (portrait) ----------- */
-    @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) {
-    /* Styles */
-    }
-    /**********
-    iPad 3
-    **********/
-    @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) and (-webkit-min-device-pixel-ratio : 2) {
-    /* Styles */
+    /* #songsList ol {
+        display: none;
+        margin: 0;
+        padding: 0;
+    }; */
+
+    #countdown div {
+        position: relative;
+        width: 70px;
+        height: 50px;
+        line-height: 44px;
+        text-align: center;
+        background: #444;
+        color: #fff;
+        margin: 0 15px;
+        font-size: 1.5em;
+        font-weight: 500;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;  
+        margin-top: -20px;
     }
     
-    @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) and (-webkit-min-device-pixel-ratio : 2) {
-    /* Styles */
+}
+
+@media only screen and (min-device-width : 1919px) and (min-device-height : 1079px) {
+     #main {
+        width: 25%;
+        /* height: 60%; */
     }
-    /* Desktops and laptops ----------- */
-    @media only screen  and (min-width : 1224px) {
-    /* Styles */
+    /* #songsList ol {
+        display: none;
+        margin: 0;
+        padding: 0;
+    }; */
+
+    #container {
+        top: 80px;
+        left: 100px;
+        right: 100px;
+        bottom: 80px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        /* align-items: center; */
+        font-family: 'Poppins', sans-serif;
     }
     
-    /* Large screens ----------- */
-    @media only screen  and (min-width : 1824px) {
-    /* Styles */
+    #container h2 {
+        text-align: center;
+        font-size: 7em;
+        line-height: 0.7em;
+        color: #fff;
+        margin-top: -40px;
+    
+    }
+    
+    #container h2 span {
+        display: block;
+        font-size: 1.3em;
+        font-weight: 500;
+        letter-spacing: 6px;
+        font-size: 0.2em;
+    }
+    
+    #countdown {
+        display: flex;
+        justify-content: center;
+        margin-top: -60px;
+        /* margin-top: 50px; */
+    }
+    
+    #countdown div {
+        position: relative;
+        width: 98px;
+        height: 70px;
+        line-height: 67px;
+        text-align: center;
+        background: #444;
+        color: #fff;
+        margin: 0 15px;
+        font-size: 1.8em;
+        font-weight: 500;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;  
+    }
+    
+    #countdown div:before {
+        content: '';
+        position: absolute;
+        bottom: -30px;
+        left: 0;
+        width: 100%;
+        height: 35px;
+        background: #F10301;
+        color: #fff;
+        font-size: 0.6em;
+        line-height: 32px;
+        font-weight: 400;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+    }
+} 
+
+@media only screen and (min-device-width : 2500px) and (min-device-height : 1300px) {
     #main {
         width: 25%;
+        height: 45%;
+        /* height: 60%; */
     }
+    /* #songsList ol {
+        display: none;
+        margin: 0;
+        padding: 0;
+    }; */
+#songsList {
+    height:230px;
+
+}
+
+#image img{
+    height: 280px;
+    width: 100%;
+    margin-top: -5px;
+}
+
+
+    #container {
+        top: 100px;
+        left: 100px;
+        right: 100px;
+        bottom: 80px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        /* align-items: center; */
+        font-family: 'Poppins', sans-serif;
     }
     
-    /* iPhone 4 ----------- */
-    @media only screen and (min-device-width : 320px) and (max-device-width : 480px) and (orientation : landscape) and (-webkit-min-device-pixel-ratio : 2) {
-    /* Styles */
+    #container h2 {
+        text-align: center;
+        font-size: 11em;
+        line-height: 0.7em;
+        color: #fff;
+        margin-top: -40px;
+    
+    }
+    
+    #container h2 span {
+        display: block;
+        font-size: 1.1em;
+        font-weight: 500;
+        letter-spacing: 6px;
+        font-size: 0.2em;
+    }
+    
+    #countdown {
+        display: flex;
+        justify-content: center;
+        margin-top: -60px;
+        /* margin-top: 50px; */
+    }
+    
+    #countdown div {
+        position: relative;
+        width: 137px;
+        height: 110px;
+        line-height: 107px;
+        text-align: center;
+        background: #444;
+        color: #fff;
+        margin: 0 15px;
+        font-size: 3em;
+        font-weight: 500;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;  
+    }
+    
+    #countdown div:before {
+        content: '';
+        position: absolute;
+        bottom: -30px;
+        left: 0;
+        width: 100%;
+        height: 40px;
+        background: #F10301;
+        color: #fff;
+        font-size: 0.6em;
+        line-height: 36px;
+        font-weight: 400;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+    }
+}
+
+
+@media only screen and (min-device-width : 3800px) and (min-device-height : 2000px) {
     #main {
         width: 25%;
+        /* height: 60%; */
     }
-    }
-    
-    @media only screen and (min-device-width : 320px) and (max-device-width : 480px) and (orientation : portrait) and (-webkit-min-device-pixel-ratio : 2) {
-    /* Styles */
-    #main {
-        width: 85%;
-    }
-    }
-    
-    /* iPhone 5 ----------- */
-    @media only screen and (min-device-width: 320px) and (max-device-height: 568px) and (orientation : landscape) and (-webkit-device-pixel-ratio: 2){
-    /* Styles */
-    }
-    
-    @media only screen and (min-device-width: 320px) and (max-device-height: 568px) and (orientation : portrait) and (-webkit-device-pixel-ratio: 2){
-    /* Styles */
-    }
-    
-    /* iPhone 6, 7, 8 ----------- */
-    @media only screen and (min-device-width: 375px) and (max-device-height: 667px) and (orientation : landscape) and (-webkit-device-pixel-ratio: 2){
-    /* Styles */
-    }
-    
-    @media only screen and (min-device-width: 375px) and (max-device-height: 667px) and (orientation : portrait) and (-webkit-device-pixel-ratio: 2){
-    /* Styles */
-    }
-    
-    /* iPhone 6+, 7+, 8+ ----------- */
-    @media only screen and (min-device-width: 414px) and (max-device-height: 736px) and (orientation : landscape) and (-webkit-device-pixel-ratio: 2){
-    /* Styles */
-    }
-    
-    @media only screen and (min-device-width: 414px) and (max-device-height: 736px) and (orientation : portrait) and (-webkit-device-pixel-ratio: 2){
-    /* Styles */
-    }
-    
-    /* iPhone X ----------- */
-    @media only screen and (min-device-width: 375px) and (max-device-height: 812px) and (orientation : landscape) and (-webkit-device-pixel-ratio: 3){
-    /* Styles */
+    /* #songsList ol {
+        display: none;
+        margin: 0;
+        padding: 0;
+    }; */
+#songsList {
+    height: 400px;
+
+}
+
+#songsList ol {
+    font-size: 2em;
+    padding-left: 70px;
+}
+
+#image img{
+    height: 400px;
+    width: 100%;
+    margin-top: -5px;
+}
+
+
+    #container {
+        top: 100px;
+        left: 100px;
+        right: 100px;
+        bottom: 80px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        /* align-items: center; */
+        font-family: 'Poppins', sans-serif;
     }
     
-    @media only screen and (min-device-width: 375px) and (max-device-height: 812px) and (orientation : portrait) and (-webkit-device-pixel-ratio: 3){
-    /* Styles */
+    #container h2 {
+        text-align: center;
+        font-size: 15em;
+        line-height: 0.7em;
+        color: #fff;
+        margin-top: -40px;
+    
     }
     
-    /* iPhone XS Max, XR ----------- */
-    @media only screen and (min-device-width: 414px) and (max-device-height: 896px) and (orientation : landscape) and (-webkit-device-pixel-ratio: 3){
-    /* Styles */
+    #container h2 span {
+        display: block;
+        font-size: 1.1em;
+        font-weight: 500;
+        letter-spacing: 6px;
+        font-size: 0.2em;
     }
     
-    @media only screen and (min-device-width: 414px) and (max-device-height: 896px) and (orientation : portrait) and (-webkit-device-pixel-ratio: 3){
-    /* Styles */
+    #countdown {
+        display: flex;
+        justify-content: center;
+        margin-top: -60px;
+        /* margin-top: 50px; */
     }
     
-    /* Samsung Galaxy S3 ----------- */
-    @media only screen and (min-device-width: 320px) and (max-device-height: 640px) and (orientation : landscape) and (-webkit-device-pixel-ratio: 2){
-    /* Styles */
+    #countdown div {
+        position: relative;
+        width: 220px;
+        height: 170px;
+        line-height: 147px;
+        text-align: center;
+        background: #444;
+        color: #fff;
+        margin: 0 15px;
+        font-size: 5em;
+        font-weight: 500;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;  
     }
     
-    @media only screen and (min-device-width: 320px) and (max-device-height: 640px) and (orientation : portrait) and (-webkit-device-pixel-ratio: 2){
-    /* Styles */
+    #countdown div:before {
+        content: '';
+        position: absolute;
+        bottom: -30px;
+        left: 0;
+        width: 100%;
+        height: 55px;
+        background: #F10301;
+        color: #fff;
+        font-size: 0.5em;
+        line-height: 50px;
+        font-weight: 400;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
     }
-    
-    /* Samsung Galaxy S4 ----------- */
-    @media only screen and (min-device-width: 320px) and (max-device-height: 640px) and (orientation : landscape) and (-webkit-device-pixel-ratio: 3){
-    /* Styles */
-    }
-    
-    @media only screen and (min-device-width: 320px) and (max-device-height: 640px) and (orientation : portrait) and (-webkit-device-pixel-ratio: 3){
-    /* Styles */
-    }
-    
-    /* Samsung Galaxy S5 ----------- */
-    @media only screen and (min-device-width: 360px) and (max-device-height: 640px) and (orientation : landscape) and (-webkit-device-pixel-ratio: 3){
-    /* Styles */
-    }
-    
-    @media only screen and (min-device-width: 360px) and (max-device-height: 640px) and (orientation : portrait) and (-webkit-device-pixel-ratio: 3){
-    /* Styles */
-    }
+}
