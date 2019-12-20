@@ -1,4 +1,6 @@
-const countDate = new Date('Jan 1, 2020 00:00:00').getTime();
+const countDate = new Date('Dec 20, 2019 21:09:00').getTime() //('Jan 1, 2020 00:00:00').getTime();
+let wrapper = document.getElementById('wrapper')
+const video = "<video autoplay width='100%' height='100%' src='./media/video/newyear.mp4' type='video/mp4'>";
 
 function newYear() {
     let now = new Date().getTime()
@@ -17,7 +19,13 @@ function newYear() {
     document.getElementById('day').innerText = d;
     document.getElementById('hour').innerText = h;
     document.getElementById('minute').innerText = m;
-    document.getElementById('second').innerText = s;
+    document.getElementById('second').innerText = s
+    console.log(gap)
+
+    if (gap < 1000) {
+        song.pause();
+        wrapper.innerHTML = video;
+    }
 }
 
 setInterval(function(){
