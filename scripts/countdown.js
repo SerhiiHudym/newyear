@@ -1,4 +1,4 @@
-const countDate = new Date('Dec 21, 2019 00:48:00').getTime() //('Jan 1, 2020 00:00:00').getTime();
+const countDate = new Date('Jan 1, 2020 00:00:00').getTime() //('Jan 1, 2020 00:00:00').getTime();
 let wrapper = document.getElementById('wrapper')
 const video = "<video autoplay width='100%' height='100%' src='./media/video/newyear.mp4' type='video/mp4'>";
 
