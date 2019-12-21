@@ -230,16 +230,16 @@ body{
 }
 
 #countdown #day:before {
-    content: 'Days';
+    content: 'днів';
 }
 #countdown #hour:before {
-    content: 'Hours';
+    content: 'Годин';
 }
 #countdown #minute:before {
-    content: 'Minutes';
+    content: 'Хвилин';
 }
 #countdown #second:before {
-    content: 'Seconds';
+    content: 'Секунд';
 }
 /* @media screen and (max-width: 1200px) {
     #main {
