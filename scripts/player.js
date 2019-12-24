@@ -9,6 +9,7 @@ const songs = [
     "Bing Crosby - I Wish You a Merry Christmas",
     "Brett Eldredge - A Holly Jolly Christmas",
     "Brenda Lee - Rockin  Around the Christmas Tree",
+    "Britney Spears - My Only Wish (This Year)",
     "Bryan Adams - Merry Christmas",
     "Burl Ives - Have a holly jolly Christmas",
     "Carson Lueders - Lonely",
