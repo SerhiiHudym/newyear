@@ -22,9 +22,13 @@ function newYear() {
     document.getElementById('second').innerText = s
     console.log(gap)
 
-    if (gap < 1000) {
+    if (gap < 540000) {
         song.pause();
         wrapper.innerHTML = video;
+        if (gap < 420000) {
+            // window.location
+            window.location.replace("https://youtu.be/3Q11d6I21PE");
+        }
     }
 }
 
