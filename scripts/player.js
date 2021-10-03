@@ -138,7 +138,7 @@ song.onended = next;
 
 function playSong(){
     
-    song.src = './media/audio/' + songs[currentSong] + '.mp3'; 
+    song.src = './media/audio/' + songs[currentSong] + '.mp3';
     
     songTitle.textContent = songs[currentSong];
 
